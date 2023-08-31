@@ -1,0 +1,5 @@
+3- Plantear Historias de Usuarios en base a los requerimientos del proyecto
+teniendo en cuenta una redacción y nomenclatura adecuada, ej “#US01 Como
+usuario quiero registrarme en el sitio web para comprar uno o varios productos” y
+su respectivos criterios de aceptación. Pueden utilizar la siguiente plantilla:
+Plantilla Historias de Usuario

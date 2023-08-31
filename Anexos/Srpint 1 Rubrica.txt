@@ -1,0 +1,30 @@
+Rúbricas de valoración Sprint 1
+En relación al Frontend:
+Logra crear una estructura de carpetas de la web de manera
+prolija/ordenada y respetando reglas de nomenclatura en nombres de
+archivos y carpetas:
+Logra crear la estructura semántica en todas las páginas web de la
+aplicación web (etiquetas semánticas):
+Logra la navegación funcional de la web
+Logra agregar estilos CSS
+Logra el web responsive
+Logra integrar Bootstrap
+Pasa las validaciones de html y css de la W3C. Links:
+https://validator.w3.org/ y https://jigsaw.w3.org/css-validator/
+Pasa las validaciones de Lighthouse. F12->Lighthouse.
+En relación al Backend:
+Logra la abstracción a partir del diagrama de clases.
+Logra la modularización a partir del diagrama de clases implementado
+con Python.
+Logra diseñar la base de datos presentando el diseño conceptual, lógico y
+físico.
+En relación a la Gestión de Proyecto:
+Logra definir issues a partir de las historias de usuario o bien de las tareas
+correspondientes al sprint 1.
+Logra definir un esquema de branching.
+3
+Logra crear el milestone correspondiente al sprint.
+Logra realizar confirmaciones.
+Logra llevar actualizado el kanban del proyecto.
+Logra documentar las ceremonias de planning, review y retrospective.
+Logra mantener actualizado el documento de proyecto IEEE830.
