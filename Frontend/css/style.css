@@ -1,21 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
 .logo {
     height: 100px;
 }
+
 .botones {
-    display: flex;
-    justify-content: space-between;
-    margin-right: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
 }
 
 .iniciar {
     margin: 2px;
-    width: 120px;
+    width: 115px;
     background-color: #253C59;
 }
 
 .registro {
     margin: 2px;
     background-color: #BF8D30;
+    width: 115px;
 }
 
 .texto-nav {
@@ -28,6 +34,13 @@
     justify-content: space-around;
 }
 
-.color-navbar{
-    background-color: #99B4BF;
+.caja-navbar{
+    width: 80%;
+    
+}
+
+.nav-lista{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #99B4BF
 }
