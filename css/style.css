@@ -31,3 +31,139 @@
 .color-navbar{
     background-color: #99B4BF;
 }
+
+
+
+
+/* ESTILOS SECCIONES VIRGINIA */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* SECTION DESTINOS */
+
+.seccion-destinos{
+   background: gray;
+}
+
+.contenedor{
+    
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    padding: 60px 0;
+}
+
+h2{
+    font-size: 40px;
+    text-align: center;
+}
+
+.contenedor-destinos{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    justify-content: space-around;
+}
+
+.destino{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+    background: lightgrey;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.imagen{
+    width: 40%;
+}
+
+
+.texto{
+    width: 40%;
+    text-align: center;
+    display: table;
+    margin: 3rem auto;
+}
+
+.texto h3 p{
+    display: table-cell;
+    margin: 0;
+    padding: 0 1rem;
+    vertical-align: middle;
+
+}
+
+a{
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+    background: white;
+    padding: 5px 30px;
+    border-radius: 2px;
+}
+
+
+
+/* SECTION CONTACTO CON FORMULARIO */
+
+
+.section-contacto{
+    margin-top: 30px;
+
+}
+
+
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.input{
+    background: transparent;
+    border: 0;
+    color: black;
+    outline: none;
+    border: solid black 1px;
+    padding: 20px 10px ;
+}
+
+.input::placeholder{
+    color: black;
+}
+
+.input[type="text"],
+input[type="email"]{
+    display: inline-block;
+    width: 49%;
+    margin-bottom: 30px;
+
+}
+
+.form textarea{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input[type="submit"]{
+    width: 120px;
+    text-align: center;
+    padding: 14px 0;
+    
+    
+
+}
+
+.input[type="submit"]:hover{
+    cursor: pointer;
+    background: white;
+    
+   
+}
+
+
