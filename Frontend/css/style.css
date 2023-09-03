@@ -44,3 +44,29 @@
     justify-content: space-evenly;
     background-color: #99B4BF
 }
+
+.footer-center{
+    color: rgb(54, 37, 70);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #99B4BF
+}
+
+.footer-left{
+    
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    display: flex;
+    background-color: #99B4BF
+}
+
+.footer-right{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #99B4BF
+}
