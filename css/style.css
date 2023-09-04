@@ -71,12 +71,15 @@ h2{
 
 .destino{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     margin-bottom: 40px;
     background: lightgrey;
     padding: 10px;
     border-radius: 10px;
 }
+
+
 
 .imagen{
     width: 40%;
@@ -166,8 +169,8 @@ input[type="email"]{
    
 }
 
-/* RESPONSIVE SECTION DESTINOS Y SECTION CONTACTO */
 
+/* RESPONSIVE */
 
 @media screen and (max-width:950px){
 
