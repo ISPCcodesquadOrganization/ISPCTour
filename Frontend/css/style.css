@@ -44,3 +44,66 @@
     justify-content: space-evenly;
     background-color: #99B4BF
 }
+
+
+/* estilos jujuy*/
+
+.h1-jujuy {
+    display:flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.caja-turismo {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.caja-principal-jujuy{
+
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-gap: 25px;
+    grid-template-rows: 330px 330px 330px;
+    margin-bottom: 100px;
+}
+
+.caja-jujuy {
+    width: 330px;
+    overflow: hidden;
+    padding: 15px 5px;
+}
+
+.jujuy-imagen {
+    width: 300px;
+    border-radius: 4px;
+}
+
+.tarjetas {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+}
+
+.tarjeta-caja {
+    background-color: #99B4BF;
+    display: flex;
+    align-items: center;
+}
+
+.tarjeta-icono {
+    padding: 20px;
+    width: 150px;
+}
+
+.tarjeta-texto {
+    background-color: rgb(250, 250, 250);
+}
+
+.tarjeta-presentacion {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
