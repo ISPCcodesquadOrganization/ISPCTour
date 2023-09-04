@@ -166,4 +166,42 @@ input[type="email"]{
    
 }
 
+/* RESPONSIVE SECTION DESTINOS Y SECTION CONTACTO */
+
+
+@media screen and (max-width:950px){
+
+    .imagen{
+        width: 90%;
+       
+    }
+
+    .texto{
+        width: 90%;
+    }
+
+    .impar{
+        padding-top: 35px;
+    }
+    
+    .par{
+        padding-bottom: 35px;
+    }
+
+    
+}
+
+@media screen and (max-width:400px){
+
+    .input[type="text"],
+    input[type="email"]{
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+ 
+}
+
+
+
 
