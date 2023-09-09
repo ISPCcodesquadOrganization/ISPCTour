@@ -45,11 +45,20 @@
     background-color: #99B4BF
 }
 
+/* Footer */
+
+footer ul li {
+    list-style: none; 
+    font-size: larger; 
+    font-weight: bold; 
+}
+
+
 .footer-center{
+    
     color: rgb(54, 37, 70);
     padding-top: 25px;
     padding-bottom: 25px;
-    display: flex;
     justify-content: space-evenly;
     background-color: #99B4BF
 }
@@ -59,15 +68,13 @@
     padding-top: 25px;
     padding-bottom: 25px;
     padding-left: 25px;
-    display: flex;
     background-color: #99B4BF
 }
 
 .footer-right{
+    
     padding-top: 25px;
     padding-bottom: 25px;
-    display: flex;
-    justify-content: space-evenly;
     background-color: #99B4BF
 }
 
@@ -115,8 +122,6 @@ h2{
     border-radius: 10px;
 }
 
-
-
 .imagen{
     width: 40%;
 }
@@ -137,7 +142,8 @@ h2{
 
 }
 
-a{
+/* Vir, cambié el "a{...}" por ".destino a{...}" para que no afecte al footer y al header*/
+.destino a{
     border: 1px solid black;
     text-decoration: none;
     color: black;
