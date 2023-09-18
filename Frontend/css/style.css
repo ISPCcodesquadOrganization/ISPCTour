@@ -82,13 +82,174 @@ margin-left: 40px;
     background-color: #99B4BF
 }
 
+/* ESTILOS SECCIONES VIRGINIA */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* SECTION DESTINOS */
+
+.seccion-destinos{
+   background: gray;
+}
+
+.contenedor{
+    
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    padding: 60px 0;
+}
+
+h2{
+    font-size: 40px;
+    text-align: center;
+}
+
+.contenedor-destinos{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    justify-content: space-around;
+}
+
+.destino{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+    background: lightgrey;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.imagen{
+    width: 40%;
+}
+
+
+.texto{
+    width: 40%;
+    text-align: center;
+    display: table;
+    margin: 3rem auto;
+}
+
+.texto h3 p{
+    display: table-cell;
+    margin: 0;
+    padding: 0 1rem;
+    vertical-align: middle;
+
+}
+
+/* Vir, cambié el "a{...}" por ".destino a{...}" para que no afecte al footer y al header*/
+.destino a{
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+    background: white;
+    padding: 5px 30px;
+    border-radius: 2px;
+}
 
 
 
+/* SECTION CONTACTO CON FORMULARIO */
 
-/* FRANCO */
+
+.section-contacto{
+    margin-top: 30px;
+
+}
 
 
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.input{
+    background: transparent;
+    border: 0;
+    color: black;
+    outline: none;
+    border: solid black 1px;
+    padding: 20px 10px ;
+}
+
+.input::placeholder{
+    color: black;
+}
+
+.input[type="text"],
+input[type="email"]{
+    display: inline-block;
+    width: 49%;
+    margin-bottom: 30px;
+
+}
+
+.form textarea{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input[type="submit"]{
+    width: 120px;
+    text-align: center;
+    padding: 14px 0;
+    
+    
+
+}
+
+.input[type="submit"]:hover{
+    cursor: pointer;
+    background: white;
+    
+   
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width:950px){
+
+    .imagen{
+        width: 90%;
+       
+    }
+
+    .texto{
+        width: 90%;
+    }
+
+    .impar{
+        padding-top: 35px;
+    }
+    
+    .par{
+        padding-bottom: 35px;
+    }
+
+    
+}
+
+@media screen and (max-width:400px){
+
+    .input[type="text"],
+    input[type="email"]{
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+ 
+}
 
 /* estilos destinos*/
 
@@ -271,419 +432,3 @@ margin-left: 40px;
         display: none;
     }
 }
-
-
-/* VIRGINIA */
-
-
-html{
-    scroll-behavior: smooth;
-}
-
-
-
-/* BANNER */
-
-.hero{
-    background-image: linear-gradient(to top, rgba(251, 194, 235, 0.356) 0%, #c2d1ec69 100%), url("Frontend/imagenes/banner.jpg");
-    width: 100%;
-    height: 650px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    position: relative;
-    overflow: hidden;
-}
-
-.textos-hero{
-    height: 500px;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
-.textos-hero h1{
-    font-size: 70px;
-    
-}
-
-.textos-hero p{
-    font-size: 25px;
-    margin-bottom: 30px;
-}
-
-.textos-hero a{
-    display: inline-block;
-    text-decoration: none;
-    padding: 12px 15px;
-    background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
-    border-radius: 25px;
-    color: white;
-}
-
-.textos-hero a:hover{
-    cursor: pointer;
-    background: white;
-    color: black;
-
-}
-
-
-
-@media screen and (max-width:870px){
-    .textos-hero h1{
-        font-size: 50px;
-        text-align: center;
-
-    }
-
-    .textos-hero p{
-        font-size: 20px;
-
-    }
-}
-
-.svg-hero{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    
-}
-
-
-
-/* QUIENES SOMOS */
-
-.quienes-somos{
-    width: 100%;
-    margin-top: 200px;
-    margin-bottom: 200px;
-    
-
-}
-
-.quienes-texto{
-    display: table-cell;
-    margin: 0;
-    padding: 0 1rem;
-    vertical-align: middle;
-
-    justify-content: center;
-    text-align: center;
-    display: table;
-    margin: 3rem auto;
-}
-
-@media screen and (max-width:1000px){
-
-    .quienes-somos{
-       
-        margin-top: 100px;
-        margin-bottom: 100px;
-        
-    
-    }
-    
-}
-
-
-
-/*DIBUJO MAPA*/
-.mapa-1{
-    margin-top: 50px;
-    margin-bottom: 50px;
-    
-}
-
-.mapa{
-    
-    margin-bottom: 50px;
-    margin-top: 50px;
-   
-}
-
-.canva{
-    display: flex;
-    justify-content: center;
-    
-}
-
-.imagen-mapa{
-    width: 40%;
-    
-    
-}
-
-@media screen and (max-width:800px){
-    .imagen-mapa{
-        width: 60%;
-
-    }
-
-}
-
-@media screen and (max-width:500px){
-    .imagen-mapa{
-        width: 70%;
-
-    }
-
-    .mapa-1{
-        margin-top: 25px;
-        margin-bottom: 25px;
-        
-    }
-
-    .mapa{
-        margin-bottom: 25px;
-        margin-top: 25px;
-       
-    }
-
-
-}
-
-
-
-
-/* SECCION GALERIA background: #c1fdff80; */
-
-.galeria h2{
-    margin-top: 0;
-}
-
-.galeria{
-    background: #c1fdff80;
-}
-
-   
-.galeria-cont{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    justify-content: space-evenly;
-    overflow: hidden;
-}
-
-.galeria .contenedor{
-    padding: 0;
-
-}
-
-.galeria-cont>img{
-    width: 30%;
-    object-fit: cover;
-    margin-bottom: 20px;
-    display: block;
-    box-shadow: 0 0 15px 0 rgba(0, 0, 0, .5);
-    cursor: pointer;
-    overflow: hidden;
-}
-
-@media screen and (max-width:800px){
-    .galeria-cont>img{
-        width: 49%;
-    }
-}
-
-@media screen and (max-width:550px){
-    .galeria-cont>img{
-        width: 97%;
-    }
-}
-
-
-
-
-/* SECTION DESTINOS */
-
-.seccion-destinos{
-    background: #c1fdff80;
-   
-}
-
-.contenedor{
-    
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
-    overflow: hidden;
-    padding:  0;
-}
-
-h2{
-    font-size: 40px;
-    text-align: center;
-}
-
-.contenedor-destinos{
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 60px;
-    justify-content: space-around;
-
-}
-
-.destino{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin-bottom: 40px;
-    background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
-    padding: 10px;
-    border-radius: 20px;
-
-    
-}
-
-
-
-
-.imagen{
-    width: 40%;
-    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .5);
-    transform: scale(0.9);
-    transition: transform 0.6s;
-}
-
-.imagen:hover{
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
-    transform: scale(1);
-    cursor: pointer;
-
-}
-
-
-.texto{
-    width: 40%;
-    text-align: center;
-    display: table;
-    margin: 3rem auto;
-    color: black;
-}
-
-.texto h3 p{
-    display: table-cell;
-    margin: 0;
-    padding: 0 1rem;
-    vertical-align: middle;
-
-}
-
-.destino a{
-    border: 1px solid black;
-    text-decoration: none;
-    color: black;
-    background: white;
-    padding: 5px 30px;
-    border-radius: 15px;
-}
-
-
-
-/* SECTION CONTACTO CON FORMULARIO */
-
-
-.section-contacto{
-   
-    background: #c1fdff80;
-
-}
-
-
-.form{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.input{
-    background: transparent;
-    border: 0;
-    color: black;
-    outline: none;
-    border: solid black;
-    padding: 20px 10px ;
-    border-radius: 30px;
-}
-
-.input::placeholder{
-    color: black;
-}
-
-.input[type="text"],
-input[type="email"]{
-    display: inline-block;
-    width: 49%;
-    margin-bottom: 30px;
-
-}
-
-.form textarea{
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.input[type="submit"]{
-    width: 120px;
-    text-align: center;
-    padding: 14px 0;
-    margin-bottom: 30px;
-    
-    
-
-}
-
-.input[type="submit"]:hover{
-    cursor: pointer;
-    background: white;
-    color: black;
-    
-   
-}
-
-
-
-/* RESPONSIVE SECTION DESTINOS Y CONTACTOS */
-
-@media screen and (max-width:950px){
-
-    .imagen{
-        width: 90%;
-       
-    }
-
-    .texto{
-        width: 90%;
-    }
-
-    .impar{
-        padding-top: 35px;
-    }
-    
-    .par{
-        padding-bottom: 35px;
-    }
-
-    
-}
-
-@media screen and (max-width:550px){
-
-    .input[type="text"],
-    input[type="email"]{
-        flex-wrap: wrap;
-        width: 100%;
-        margin-bottom: 30px;
-    }
- 
-}
-
-
