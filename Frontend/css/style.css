@@ -55,7 +55,6 @@ footer ul li {
 
 
 .footer-center{
-  
     display: flex;
     color: rgb(54, 37, 70);
     padding-top: 25px;
@@ -65,12 +64,15 @@ footer ul li {
 }
 
 .footer-left{
- 
     display: flex;
     padding-top: 25px;
     padding-bottom: 25px;
     padding-left: 25px;
     background-color: #99B4BF
+}
+
+.footer-left .logo{
+margin-left: 40px;
 }
 
 .footer-right{
@@ -82,7 +84,10 @@ footer ul li {
 
 /* ESTILOS SECCIONES VIRGINIA */
 
-
+*{
+    margin: 0;
+    padding: 0;
+}
 
 /* SECTION DESTINOS */
 
