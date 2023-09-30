@@ -1,0 +1,25 @@
+Rúbricas de valoración Sprint 2
+
+En relación al Frontend:
+	Logra crear los formularios de login y registro con sus respectivas
+	validaciones y mensajes personalizados al usuario.
+
+	Pasa las validaciones de html y css de la W3C. Links:
+	https://validator.w3.org/ y https://jigsaw.w3.org/css-validator/
+
+	Pasa las validaciones de Lighthouse. F12->Lighthouse.
+	En relación al Backend:
+
+	Logra modelar un caso de uso (Python).
+
+	Logra crear el CRUD de producto o servicio y listado.
+
+En relación a la Gestión de Proyecto:
+	Logra definir issues a partir de las historias de usuario o bien de las tareas correspondientes al sprint 2.
+	Logra definir un esquema de branching.
+	Logra crear el milestone correspondiente al sprint.
+	Logra realizar confirmaciones.
+	Logra llevar actualizado el kanban del proyecto.
+	Logra documentar las ceremonias de planning, review y retrospective.
+	Logra mantener actualizado el documento de proyecto IEEE830.
+	Logra documentar el proyecto mediante el archivo readme.
