@@ -1,0 +1,4 @@
+Creación de la base de datos. Entregar script de la base de datos.
+
+○ Modelo de Caso de Uso de cada modularización.
+	(1 mínimo. Ej. CRUD de Producto o Servicio (Python) y listado de productos, por ejemplo).

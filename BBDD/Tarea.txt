@@ -1,6 +1,0 @@
-En relación a la Abstracción, se debe crear el Diagrama de Clases
-(modelo de objetos). Pueden usar como herramienta también
-https://app.diagrams.net/
-
-En relación a la persistencia de los datos, se debe diseñar la base de
-datos (diseño conceptual, lógico y físico)
