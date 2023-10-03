@@ -1,9 +1,0 @@
-En relación a la Modularización, se debe construir las clases
-utilizando el lenguaje de programación en Python.
-
-Lograr la abstracción a partir del diagrama de clases.
-
-Lograr la modularización a partir del diagrama de clases implementado
-con Python.
-
-

@@ -1,0 +1,19 @@
+● Frontend
+○ 	Producción del sitio web de la tienda navegable con estructura
+	HTML, semántica, estilos CSS y Bootstrap (No es plantilla mockup, ni
+	imagen). 
+
+		Páginas web requeridas como mínimo: 
+		landing page,
+		quienes somos, 
+		contacto, 
+		galería de productos con posibilidad de acceder a la descripción de cada producto o servicio.
+
+
+○ 	Formularios login y registro con sus respectivas validaciones y	mensajes personalizados al usuario. 
+		Ej. validar por tipos de inputs
+			(text, number, email, date, select, segun lo que se requiera), 
+		agregar maxlenght y minlenght en los campos 
+			nombres, 
+			apellido, 
+			si solicitan DNI, usar MIN=1000000 MAX=99999999, por ejemplo.

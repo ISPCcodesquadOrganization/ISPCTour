@@ -1,9 +1,9 @@
 import mysql.connector
-from persona import Persona  # Importa la clase Persona para la herencia
+from persona import Persona  
 
 class Administrador(Persona):
     def __init__(self, id_empleado):
-        super().__init__()  # Llama al constructor de la clase base (Persona)
+        super().__init__()  
         self.id_empleado = id_empleado
         self.conexion = mysql.connector.connect(
             host="localhost",
@@ -16,7 +16,7 @@ class Administrador(Persona):
         try:
             cursor = self.conexion.cursor()
 
-            # Insertar un nuevo destino en la tabla Destino
+           
             cursor.execute("INSERT INTO Destino (nombreDestino) VALUES (%s)", (nombre_destino,))
             self.conexion.commit()
             print(f"Destino '{nombre_destino}' agregado correctamente.")
@@ -33,7 +33,7 @@ class Administrador(Persona):
         try:
             cursor = self.conexion.cursor()
 
-            # Obtener todos los destinos
+            
             cursor.execute("SELECT idDestino, nombreDestino FROM Destino")
             destinos = cursor.fetchall()
 
@@ -47,14 +47,12 @@ class Administrador(Persona):
 
             id_a_eliminar = input("Ingrese el ID del destino que desea eliminar: ")
 
-            # Verificar si el ID ingresado es válido
             if not id_a_eliminar.isdigit():
                 print("ID no válido.")
                 return
 
             id_a_eliminar = int(id_a_eliminar)
 
-            # Eliminar el destino seleccionado
             cursor.execute("DELETE FROM Destino WHERE idDestino = %s", (id_a_eliminar,))
             self.conexion.commit()
             print(f"Destino con ID {id_a_eliminar} eliminado correctamente.")
@@ -69,7 +67,6 @@ class Administrador(Persona):
         try:
             cursor = self.conexion.cursor()
 
-            # Obtener todos los usuarios y sus roles
             cursor.execute("SELECT p.idUsuario, p.nombre, p.apellido, r.idTipoDeRol, r.Rol FROM Personas p JOIN TipoDeRol r ON p.idTipoDeRol = r.idTipoDeRol")
             usuarios = cursor.fetchall()
 
@@ -83,14 +80,12 @@ class Administrador(Persona):
 
             id_a_modificar = input("Ingrese el ID del usuario que desea modificar: ")
 
-            # Verificar si el ID ingresado es válido
             if not id_a_modificar.isdigit():
                 print("ID no válido.")
                 return
 
             id_a_modificar = int(id_a_modificar)
 
-            # Obtener todos los tipos de rol
             cursor.execute("SELECT idTipoDeRol, Rol FROM TipoDeRol")
             tipos_rol = cursor.fetchall()
 
@@ -104,14 +99,12 @@ class Administrador(Persona):
 
             nuevo_id_tipo_rol = input("Ingrese el nuevo ID Tipo de Rol: ")
 
-            # Verificar si el nuevo ID Tipo de Rol ingresado es válido
             if not nuevo_id_tipo_rol.isdigit():
                 print("Nuevo ID Tipo de Rol no válido.")
                 return
 
             nuevo_id_tipo_rol = int(nuevo_id_tipo_rol)
 
-            # Actualizar el ID Tipo de Rol del usuario seleccionado
             cursor.execute("UPDATE Personas SET idTipoDeRol = %s WHERE idUsuario = %s", (nuevo_id_tipo_rol, id_a_modificar))
             self.conexion.commit()
             print(f"ID Tipo de Rol del usuario con ID {id_a_modificar} modificado correctamente a {nuevo_id_tipo_rol}.")
