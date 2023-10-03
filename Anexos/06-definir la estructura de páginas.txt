@@ -1,5 +1,0 @@
-6- Definir la estructura de páginas en la Wiki del repositorio en github a fin de
-poder documentar: Nombre y apellido de los integrantes del equipo como así
-también los roles de cada quién, registro de ceremonias de scrum: planning,
-review y retrospective (para esta última es importante publicar además el plan
-de mejora a ejecutar en la siguiente iteración), documento IEEE830 del proyecto.
