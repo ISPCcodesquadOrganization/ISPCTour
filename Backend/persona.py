@@ -1,4 +1,5 @@
 import mysql.connector
+from mysql_conexion import conectar_bd, cerrar_bd
 
 class Persona:
 
@@ -14,15 +15,10 @@ class Persona:
 
         try:
             # Conectar a la base de datos
-            conexion = mysql.connector.connect(
-                host="localhost",
-                user="root",
-                password="root",
-                database="ispc_tour"
-            )
+            conexion = conectar_bd()
 
             # Verificar la conexión
-            if conexion.is_connected():
+            if conexion:
                 cursor = conexion.cursor()
 
                 sentencia = "INSERT INTO personas (nombre,apellido, email, nombreUsuario, Telefono, direccionUsuario, contraseña) VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}')".format(self.nombre,self.apellido, self.email, self.username, self.telefono, self.direccion, self.contraseña)
@@ -34,6 +30,8 @@ class Persona:
 
             else:
                 print("No se pudo conectar a la base de datos.")
+            
+            cerrar_bd(conexion)
         
         except mysql.connector.Error as e:
             print("Error:", e)
@@ -45,16 +43,10 @@ class Persona:
     def verificarDisponibilidad(self):
         nombreUsuario = input("Ingrese un nombre de usuario: ")
         try:
-            # Conectar a la base de datos
-            conexion = mysql.connector.connect(
-                host="localhost",
-                user="root",
-                password="root",
-                database="ispc_tour"
-            )
+            conexion = conectar_bd()
 
             # Verificar la conexión
-            if conexion.is_connected():
+            if conexion:
                 cursor = conexion.cursor()
 
                 # Consulta SQL para verificar si el usuario existe en la tabla Personas
@@ -69,11 +61,10 @@ class Persona:
                     print('Usuario disponible')
                     return nombreUsuario  # El usuario no existe
 
-                cursor.close()
-                conexion.close()
-
             else:
                 print("No se pudo conectar a la base de datos.")
+
+            cerrar_bd(conexion)
         
         except mysql.connector.Error as e:
             print("Error:", e)
@@ -89,15 +80,10 @@ class Persona:
     def verificar_usuario(self):
         try:
             # Conectar a la base de datos
-            conexion = mysql.connector.connect(
-                host="localhost",
-                user="root",
-                password="root",
-                database="ispc_tour"
-            )
+            conexion = conectar_bd()
 
             # Verificar la conexión
-            if conexion.is_connected():
+            if conexion:
                 cursor = conexion.cursor()
 
                 nombre_usuario = input('Ingrese su nombre de usuario: ')
@@ -127,11 +113,10 @@ class Persona:
                     print('Usuario o contraseña incorrectos')
                     return False  # El usuario no existe
                 
-
-                cursor.close()
-                conexion.close()
             else:
                 print("No se pudo conectar a la base de datos.")
+
+            cerrar_bd(conexion)
 
         except mysql.connector.Error as e:
             print("Error:", e)
