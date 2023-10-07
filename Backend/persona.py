@@ -1,3 +1,5 @@
+import os
+import time
 import mysql.connector
 from mysql_conexion import conectar_bd, cerrar_bd
 
@@ -38,7 +40,7 @@ class Persona:
 
 
         
-        print("Se ha registrado correctamente")
+        print("Se ha registrado correctamente!")
 
     def verificarDisponibilidad(self):
         nombreUsuario = input("Ingrese un nombre de usuario: ")
@@ -56,6 +58,8 @@ class Persona:
 
                 if resultado[0] > 0:
                     print('El usuario elegido no se encuentra disponible')
+                    time.sleep (1)
+                    os.system('cls')                    
                     return Persona.verificarDisponibilidad(resultado)
                 else:
                     print('Usuario disponible')
