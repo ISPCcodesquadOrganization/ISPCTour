@@ -38,12 +38,17 @@ while True:
             
             if intento == 2:
                 print("Usuario bloqueado.")
+                respuestaUsuario = False
                 break
+        break
     else:
         print('Menu registro')
+        nuevoUsuario = Persona()
+        print('El sistema va a reiniciar, seleccione la opcion SI al inicio del programa.')
+        print('Y acontinuación ingrese su usuario registrado')
+        print('*********')
 
     
-    break
 
 while respuestaUsuario != False:
     print('Por favor seleccione el numero de la opción que desee realizar.')
