@@ -1,4 +1,5 @@
 from persona import Persona
+from administrador import Administrador
 
 print('Bienvenido al sistema de ventas de ISPC TOUR')
 
@@ -48,7 +49,41 @@ while True:
         print('Y acontinuación ingrese su usuario registrado')
         print('*********')
 
+if Administrador.verificarAdministrador(validar_usuario) == 1:
+    while True:
+        print('******************************')
+        print('Bienvenido al menu de administrador')
+        print('******************************')
+        print('1 - Cambiar rol de usuario')
+        print('2 - Agregar destino')
+        print('3 - Editar destino')
+        print('4 - Salir de menu de administrador y pasar al menu normal')
+
+        seleccion_administrador = input('Ingrese la opcion seleccionada: ')
+
+        if seleccion_administrador == '1':
+            print('Permite seleccionar usuarios para editar')
+            print('********')
     
+        elif seleccion_administrador == '2':
+            print('Opciones para agregar destinos')
+            print('********')
+    
+        elif seleccion_administrador == '3':
+            print('Muestra destinos y permite seleccionar uno para editar')
+            print('********')
+    
+        elif seleccion_administrador == '4':
+            print('Usted ha salido de menu administrador')
+            print('********')
+            break
+
+        else:
+            print('La opcion seleccionada no es valida')
+            print('********')
+
+
+
 
 while respuestaUsuario != False:
     print('Por favor seleccione el numero de la opción que desee realizar.')

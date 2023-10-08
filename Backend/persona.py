@@ -25,8 +25,18 @@ class Persona:
                 cursor.execute(sentencia)
                 conexion.commit()
 
+                sentencia2 = "SELECT idUsuarios FROM personas WHERE nombreUsuario = '{}'".format(self.username)
+                cursor.execute(sentencia2)
+                usuario_provisorio = cursor.fetchone()
+                numero_entero = int(usuario_provisorio[0])
+                rol_usuario = 3
+
+                sentencia3 = "INSERT INTO personas_has_tipo_de_rol (Personas_idUsuarios, fk_Tipo_de_rol)  VALUES ('{}', '{}')".format(numero_entero, rol_usuario)
+                cursor.execute(sentencia3)
+                conexion.commit()
+
                 cursor.close()
-                conexion.close()
+                cerrar_bd(conexion)
 
             else:
                 print("No se pudo conectar a la base de datos.")
