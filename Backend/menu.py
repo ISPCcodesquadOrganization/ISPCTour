@@ -1,6 +1,8 @@
 import os
 import time
+from destinos import Destinos
 from persona import Persona
+
 
 os.system('cls')
 
@@ -68,7 +70,7 @@ def iniciarPrograma():
 
         while respuestaUsuario != False:
             print('Por favor seleccione el numero de la opción que desee realizar.')
-            print('1 - Ver paquetes de viajes disponibles.')
+            print('1 - Ver destinos disponibles.')
             print('2 - Ver mis reservas.')
             print('3 - Eliminar alguna reserva')
             print('4 - Terminar sesión')
@@ -76,9 +78,13 @@ def iniciarPrograma():
             seleccion_menu = validar_numero()
 
             if seleccion_menu == '1':
-                print('Muestra destinos turísticos disponibles')
-                print('********')
-    
+            
+                os.system('cls')
+                destinos = Destinos()
+                destinos.listarDestinosHabilitados()
+                time.sleep(3)
+
+                       
             elif seleccion_menu == '2':
                 print('En caso de tener reservas muestra las mismas y si no muestra "No tiene reservas"')
                 print('********')
