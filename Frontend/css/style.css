@@ -127,7 +127,7 @@ margin-left: 40px;
 .tarjetas {
     display: flex;
     justify-content: center;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
 
 }
 
@@ -176,6 +176,21 @@ margin-left: 40px;
     display: none;
 }
 
+.comprar{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.comprar-boton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 100px;
+    background-color: #253C59;
+    border: solid 4px  #BF8D30;
+}
 /*Estilos colage de imagenes y texto*/
 
 @media only screen  and (min-width: 821px) and (max-width: 1075px){
