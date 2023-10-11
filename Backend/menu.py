@@ -2,6 +2,7 @@ import os
 import time
 from destinos import Destinos
 from persona import Persona
+from eliminar import Reserva
 
 
 os.system('cls')
@@ -90,6 +91,9 @@ def iniciarPrograma():
                 print('********')
     
             elif seleccion_menu == '3':
+                Reserva.eliminar()
+
+
                 print('Muestra las reservas y da la opción de eliminarlas')
                 print('********')
     
