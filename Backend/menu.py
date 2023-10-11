@@ -1,5 +1,6 @@
 from persona import Persona
 from administrador import Administrador
+from destinos import Destinos
 
 print('Bienvenido al sistema de ventas de ISPC TOUR')
 
@@ -63,10 +64,13 @@ if Administrador.verificarAdministrador(validar_usuario) == 1:
 
         if seleccion_administrador == '1':
             print('Permite seleccionar usuarios para editar')
+            Administrador.modificar_rol()
             print('********')
     
         elif seleccion_administrador == '2':
             print('Opciones para agregar destinos')
+            nuevo_destino = Destinos()
+            
             print('********')
     
         elif seleccion_administrador == '3':
