@@ -7,7 +7,7 @@ def conectar_bd():
             host="localhost",
             user="root",
             password="root",
-            database="ispc_tour"
+            database="turismo"
         )
         if conexion.is_connected():
             return conexion

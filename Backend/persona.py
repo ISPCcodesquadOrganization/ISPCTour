@@ -31,7 +31,7 @@ class Persona:
                 numero_entero = int(usuario_provisorio[0])
                 rol_usuario = 3
 
-                sentencia3 = "INSERT INTO personas_has_tipo_de_rol (Personas_idUsuarios, fk_Tipo_de_rol)  VALUES ('{}', '{}')".format(numero_entero, rol_usuario)
+                sentencia3 = "INSERT INTO `personas_has_tipo de rol` (Personas_idUsuarios, fk_Tipo_de_rol)  VALUES ('{}', '{}')".format(numero_entero, rol_usuario)
                 cursor.execute(sentencia3)
                 conexion.commit()
 
@@ -135,5 +135,4 @@ class Persona:
      #   print('Funciona')
 
 
-#usuario1 = Persona()
-#print(usuario1)
+usuario1 = Persona()
