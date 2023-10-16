@@ -54,3 +54,35 @@ class Destinos:
             for i, destino in enumerate(destinos_habilitados, start=1):
                 print(f"{i}. {destino[1]} - Descripción: {destino[2]} - Precio: ${destino[3]}")
             print('_____________________________________________')
+            
+    def seleccionarDestino(self):
+        destinos_habilitados = self.getDestinosHabilitados()
+
+        if not destinos_habilitados:
+            print("No hay destinos habilitados disponibles.")
+            return None
+
+        print('Los destinos disponibles son los siguientes:')
+        print('_____________________________________________')
+        print('')
+
+        for i, destino in enumerate(destinos_habilitados, start=1):
+            print(f"{i}. {destino[1]} - Descripción: {destino[2]} - Precio: ${destino[3]}")
+
+        print('_____________________________________________')
+
+        while True:
+            try:
+                opcion = int(input("Seleccione un destino para ver los paquetes disponibles (ingrese el número): "))
+                os.system('cls')
+                if 1 <= opcion <= len(destinos_habilitados):
+                    destino_elegido = destinos_habilitados[opcion - 1]
+                    print("Destino elegido: " + destino_elegido[1])
+                    return destino_elegido  # Devolver el destino elegido
+                else:
+                    print("Opción no válida. Por favor, seleccione un número válido.")
+            except ValueError:
+                print("Por favor, ingrese un número válido.")
+
+        return None
+        
