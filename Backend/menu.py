@@ -75,6 +75,8 @@ if Administrador.verificarAdministrador(validar_usuario) == 1:
     
         elif seleccion_administrador == '3':
             print('Muestra destinos y permite seleccionar uno para editar')
+            Destinos.editarDestino()
+            
             print('********')
     
         elif seleccion_administrador == '4':

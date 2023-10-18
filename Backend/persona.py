@@ -135,4 +135,4 @@ class Persona:
      #   print('Funciona')
 
 
-usuario1 = Persona()
+#usuario1 = Persona()

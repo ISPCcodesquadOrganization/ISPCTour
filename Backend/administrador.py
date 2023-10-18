@@ -19,7 +19,7 @@ class Administrador:
                 resultado = cursor.fetchone()
                 numero_entero = int(resultado[0])
 
-                consulta2 = "SELECT fk_Tipo_de_rol FROM personas_has_tipo_de_rol WHERE Personas_idUsuarios = '{}'".format(numero_entero)
+                consulta2 = "SELECT fk_Tipo_de_rol FROM `personas_has_tipo de rol` WHERE Personas_idUsuarios = '{}'".format(numero_entero)
                 cursor.execute(consulta2)
                 resultado2 = cursor.fetchone()
                 
@@ -111,7 +111,7 @@ class Administrador:
                             nuevo_rol = int(nuevo_rol)
                             if nuevo_rol == 1 or nuevo_rol == 2 or nuevo_rol == 3:
                                 print('Se modifica rol')
-                                sentencia = "UPDATE personas_has_tipo_de_rol SET fk_Tipo_de_rol = '{}' WHERE Personas_idUsuarios = '{}'".format(nuevo_rol, resultado)
+                                sentencia = "UPDATE `personas_has_tipo de rol` SET fk_Tipo_de_rol = '{}' WHERE Personas_idUsuarios = '{}'".format(nuevo_rol, resultado)
                                 cursor.execute(sentencia)
                                 conexion.commit()
                                 break
