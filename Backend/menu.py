@@ -2,6 +2,7 @@ import os
 import time
 from destinos import Destinos
 from persona import Persona
+from eliminar import Reserva
 from paquetes import Paquetes
 from administrador import Administrador
 from mysql_conexion import conectar_bd, cerrar_bd  # Importar la función conectar_bd
@@ -180,6 +181,7 @@ def iniciarPrograma():
                 verMisReservas()
 
             elif seleccion_menu == '4':
+                Reserva.eliminar()
                 print('Muestra las reservas y da la opción de eliminarlas')
                 print('********')
 
