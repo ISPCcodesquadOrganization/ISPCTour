@@ -29,6 +29,7 @@ def validar_numero():
             print("Por favor, seleccione un número válido.")
 
 def iniciarPrograma():
+    usuario = None
     while True:
         print('***************************************************')
         print('****Bienvenido al sistema de ventas de ISPC TOUR***')
@@ -68,6 +69,7 @@ def iniciarPrograma():
                 time.sleep(3)
                 os.system('cls')
 
+######################################################################################
         if Administrador.verificarAdministrador(validar_usuario) == 1:
 
             while True:
@@ -92,9 +94,13 @@ def iniciarPrograma():
                     
                     print('********')
             
-                elif seleccion_administrador == '3':
-                    print('Muestra destinos y permite seleccionar uno para editar')
-                    Administrar_destinos.editarDestino()
+                elif seleccion_menu == '3':
+                    paquetes = Paquetes()
+                    usuario = validar_usuario
+                    os.system('cls')
+                    paquetes.verReservas(usuario)
+                    print('')
+                    time.sleep(1)
                     
                     print('********')
             
@@ -106,6 +112,7 @@ def iniciarPrograma():
                 else:
                     print('La opcion seleccionada no es valida')
                     print('********')
+#######################################################################################################
 
         while respuestaUsuario != False:
             print('Por favor seleccione el número de la opción que desee realizar.')
@@ -173,12 +180,19 @@ def iniciarPrograma():
                 
                                          
                 paquetes = Paquetes()
-                usuario = validar_usuario
+                usuario = Persona.verificar_usuario1(usuario)
+                idUsuario = usuario
                 paquetes.realizarReservaPaquete(codigo, usuario)
                                
             
             elif seleccion_menu == '3':
-                verMisReservas()
+                paquetes = Paquetes()
+                usuario = Persona.verificar_usuario1(usuario)
+                idUsuario = usuario
+                os.system('cls')
+                paquetes.verReservas(usuario)
+                print('')
+                time.sleep(1)
 
             elif seleccion_menu == '4':
                 Reserva.eliminar()
