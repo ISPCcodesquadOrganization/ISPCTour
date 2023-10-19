@@ -125,7 +125,7 @@ class Persona:
         except mysql.connector.Error as e:
             print("Error:", e)
 
-    '''def verificar_usuario(self):
+    def verificar_usuario1(self):
         try:
             # Conectar a la base de datos
             conexion = conectar_bd()
@@ -156,7 +156,7 @@ class Persona:
             cerrar_bd(conexion)
 
         except mysql.connector.Error as e:
-            print("Error:", e)'''
+            print("Error:", e)
 
 
 
