@@ -62,23 +62,24 @@ class Reserva:
 
         if conexion:
 
-            cursor = conexion.cursor()
-             
-            eliminarReserva = input("Ingrese el numero de comprar para eliminar su reserva: ")
+            try:
+                cursor = conexion.cursor()
 
-            comprobar = comprobarId(eliminarReserva)
+                eliminarReserva = input("Ingrese el número de compra para eliminar su reserva: ")
 
-            if comprobar == True:
-               sentencia = "DELETE FROM personas_has_paquetes WHERE idCompra = ('{}')".format(eliminarReserva)
-               cursor.execute(sentencia)
-               conexion.commit()
+                comprobar = comprobarId(eliminarReserva)
 
-               cursor.close()
-               cerrar_bd(conexion) 
-              
+                if comprobar == True:
+                    sentencia = "DELETE FROM personas_has_paquetes WHERE idCompra = ('{}')".format(eliminarReserva)
+                    cursor.execute(sentencia)
+                    conexion.commit()
 
+                cursor.close()
+                cerrar_bd(conexion)
+
+            except Exception as e:
+                print("El numero de compra ingresado no corresponde a un numero valido para el usuario")
            
-
         else:
             print("No se pudo conectar a la base de datos.")
             return []
