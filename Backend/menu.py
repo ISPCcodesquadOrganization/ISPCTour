@@ -94,13 +94,9 @@ def iniciarPrograma():
                     
                     print('********')
             
-                elif seleccion_menu == '3':
-                    paquetes = Paquetes()
-                    usuario = validar_usuario
-                    os.system('cls')
-                    paquetes.verReservas(usuario)
-                    print('')
-                    time.sleep(1)
+                elif seleccion_administrador == '3':
+                    print('Muestra destinos y permite seleccionar uno para editar')
+                    Administrar_destinos.editarDestino()
                     
                     print('********')
             
