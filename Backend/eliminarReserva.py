@@ -53,7 +53,7 @@ def comprobarId(numero):
     
  
 
-class Reserva:
+class EliminarReserva:
 
    def eliminar():
      
