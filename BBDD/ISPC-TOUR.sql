@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
 -- Host: localhost    Database: ispc_tour
 -- ------------------------------------------------------
--- Server version	8.0.33
+-- Server version	8.0.34
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,6 +14,9 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+CREATE DATABASE  IF NOT EXISTS `ispc_tour` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `ispc_tour`;
 
 --
 -- Table structure for table `destino`
@@ -29,7 +32,7 @@ CREATE TABLE `destino` (
   `precio` int DEFAULT NULL,
   `habilitado` tinyint DEFAULT '1',
   PRIMARY KEY (`idDestino`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +41,7 @@ CREATE TABLE `destino` (
 
 LOCK TABLES `destino` WRITE;
 /*!40000 ALTER TABLE `destino` DISABLE KEYS */;
-INSERT INTO `destino` VALUES (1,'Bariloche','buen viaje',300,1),(2,'Jujuy','lindo viaje',500,0),(3,'El Calafate','espectacular',1000,1),(4,'Ushuaia','muy lindo',150,1);
+INSERT INTO `destino` VALUES (1,'Bariloche','buen viaje',300,1),(2,'Jujuy','lindo viaje',500,0),(3,'El Calafate','espectacular',1000,1),(4,'Ushuaia','muy lindo',150,1),(5,'Mendoza','Mas vino',500,1),(6,'Miramar','Verano',400,0),(7,'Misiones','Cataratas',600,1);
 /*!40000 ALTER TABLE `destino` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -93,7 +96,7 @@ CREATE TABLE `paquetes` (
   CONSTRAINT `fk_Paquetes_Destino1` FOREIGN KEY (`Destino_idDestino`) REFERENCES `destino` (`idDestino`),
   CONSTRAINT `fk_Paquetes_Tipo de rol1` FOREIGN KEY (`Tipo de rol_idTipo de rol`) REFERENCES `tipo de rol` (`idTipo de rol`),
   CONSTRAINT `fk_Paquetes_TipoTransporte1` FOREIGN KEY (`TipoTransporte_idTipoTransporte`) REFERENCES `tipotransporte` (`idTipoTransporte`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -102,7 +105,7 @@ CREATE TABLE `paquetes` (
 
 LOCK TABLES `paquetes` WRITE;
 /*!40000 ALTER TABLE `paquetes` DISABLE KEYS */;
-INSERT INTO `paquetes` VALUES (10,'2023-12-05','2023-12-20',1,1,60,3),(11,'2024-01-01','2024-01-15',1,1,60,3),(12,'2024-01-16','2024-01-30',1,1,35,3),(20,'2023-11-15','2023-11-28',2,2,30,3),(30,'2023-11-02','2023-11-20',3,2,30,3),(40,'2023-11-25','2023-12-10',4,2,30,3);
+INSERT INTO `paquetes` VALUES (1,'2023-12-05','2023-12-20',1,1,60,3),(2,'2023-11-15','2023-11-28',2,2,30,3),(3,'2023-11-02','2023-11-20',3,2,30,3),(4,'2023-11-25','2023-12-10',4,2,30,3);
 /*!40000 ALTER TABLE `paquetes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -132,7 +135,7 @@ CREATE TABLE `personas` (
 
 LOCK TABLES `personas` WRITE;
 /*!40000 ALTER TABLE `personas` DISABLE KEYS */;
-INSERT INTO `personas` VALUES (1,'Franco','Orellana','franco@gmail.com','franco','351-7894561','Sarmiento 123','1234'),(2,'Virginia','Falconi','virginia@gmail.com','virginia','351-3216547','San martin 45','1234'),(3,'Marcelo','Luna','marcelo@gmail.com','marcelo','351-5874321','Belgrano 654','1234'),(4,'Miguel','Gonzalez','miguel@gmail.com','miguel','351-7539696','Guemes 784','1234'),(5,'Marcos','Ugarte','marcos@gmail.com','marcos','351-8529631','Patria 156','1234'),(6,'javier','asdfklñj','fasd','javier','f','asdfasd','asdf'),(7,'asdf','asdf','asdf','javier1','asdf','asdf',''),(8,'Chanchin','ninguno','a@a.com','chanchin','12345798','asfdasf 1234','1234'),(9,'hola','quetal','asdf','hola','asdf','asdf','1234'),(10,'1324','1234','1234','1234','1234','1234','1234'),(11,'t','t','t','t','t','t','t'),(12,'w','w','w','w','w','w','w'),(13,'k','k','k','k','k','k','k'),(14,'v','v','v','v','v','v','v'),(15,'','','','g','','',''),(16,'hhh','hhh','h','i','h','hh','hhh'),(17,'','','','','','',''),(18,'b','b','b','b','b','b',''),(19,'c','c','c','c','c','c','c'),(20,'veinte','veinte','abgebajbea','20','20202020','asvjavwa','2020'),(21,'veintiuno','veintiuno','asbuabfa','21','21212121','abfawbjw','2121'),(22,'22','22','22','22','22222222','22','2222'),(23,'yuyuyuyuy','yuyuyuyuyu','yuyuyuy','yuyu','yuyuyu','yuyuyuyu','yuyu'),(24,'r','r','r','r','r','r','r');
+INSERT INTO `personas` VALUES (1,'Franco','Orellana','franco@gmail.com','franco','351-7894561','Sarmiento 123','1234'),(2,'Virginia','Falconi','virginia@gmail.com','virginia','351-3216547','San martin 45','1234'),(3,'Marcelo','Luna','marcelo@gmail.com','marcelo','351-5874321','Belgrano 654','1234'),(4,'Miguel','Gonzalez','miguel@gmail.com','miguel','351-7539696','Guemes 784','1234'),(5,'Marcos','Ugarte','marcos@gmail.com','marcos','351-8529631','Patria 156','1234'),(6,'Marta','Martinez','marta@gmail.com','marta','351-8526723','Sucre 2467','1234');
 /*!40000 ALTER TABLE `personas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -151,7 +154,7 @@ CREATE TABLE `personas_has_paquetes` (
   KEY `fk_Personas_has_Paquetes_Personas1_idx` (`Personas_idUsuarios`),
   KEY `fk_Personas_has_Paquetes_Paquetes1_idx` (`Paquetes_idPaquetes`),
   CONSTRAINT `fk_Personas_has_Paquetes_Personas1` FOREIGN KEY (`Personas_idUsuarios`) REFERENCES `personas` (`idUsuarios`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -160,7 +163,7 @@ CREATE TABLE `personas_has_paquetes` (
 
 LOCK TABLES `personas_has_paquetes` WRITE;
 /*!40000 ALTER TABLE `personas_has_paquetes` DISABLE KEYS */;
-INSERT INTO `personas_has_paquetes` VALUES (5,14,10),(8,14,10),(12,14,10),(6,23,10),(7,23,10),(9,24,40),(10,24,10),(11,24,40);
+INSERT INTO `personas_has_paquetes` VALUES (7,1,1),(1,6,2);
 /*!40000 ALTER TABLE `personas_has_paquetes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -188,7 +191,7 @@ CREATE TABLE `personas_has_tipo de rol` (
 
 LOCK TABLES `personas_has_tipo de rol` WRITE;
 /*!40000 ALTER TABLE `personas_has_tipo de rol` DISABLE KEYS */;
-INSERT INTO `personas_has_tipo de rol` VALUES (1,1),(2,1),(3,1),(4,1),(5,1),(22,3);
+INSERT INTO `personas_has_tipo de rol` VALUES (1,1),(2,1),(3,1),(4,1),(5,1),(6,3);
 /*!40000 ALTER TABLE `personas_has_tipo de rol` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -250,4 +253,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-16 20:36:33
+-- Dump completed on 2023-10-22 12:07:10
