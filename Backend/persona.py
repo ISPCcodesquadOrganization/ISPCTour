@@ -3,6 +3,8 @@ import time
 import mysql.connector
 from mysql_conexion import conectar_bd, cerrar_bd
 
+
+
 class Persona:
 
     def __init__(self):
@@ -95,7 +97,7 @@ class Persona:
 
                 # Consulta SQL para verificar si el usuario existe en la tabla Personas
                 consulta = "SELECT COUNT(*) FROM personas WHERE nombreUsuario = '{}'".format(nombre_usuario)
-
+                
                 cursor.execute(consulta)
                 resultado = cursor.fetchone()
 
@@ -125,7 +127,7 @@ class Persona:
         except mysql.connector.Error as e:
             print("Error:", e)
 
-    '''def verificar_usuario(self):
+    def verificar_usuario1(self):
         try:
             # Conectar a la base de datos
             conexion = conectar_bd()
@@ -156,10 +158,44 @@ class Persona:
             cerrar_bd(conexion)
 
         except mysql.connector.Error as e:
-            print("Error:", e)'''
+            print("Error:", e)
 
 
 
-    
+    def obtener_id_usuario_por_login(login):
+        try:
+            # Conectar a la base de datos
+            conexion = conectar_bd()
+
+            # Verificar la conexión
+            if conexion:
+                cursor = conexion.cursor()
+
+                # Construir la sentencia SQL para buscar el ID del usuario por el nombre de usuario
+                sentencia = "SELECT idUsuarios FROM personas WHERE nombreUsuario = %s"
+                cursor.execute(sentencia, (login,))
+
+                # Obtener el resultado de la consulta
+                resultado = cursor.fetchone()
+
+                # Cerrar el cursor y la conexión a la base de datos
+                cursor.close()
+                cerrar_bd(conexion)
+
+                if resultado:
+                    # Si se encontró un resultado, devuelve el ID de usuario
+                    return resultado[0]
+                else:
+                    # Si no se encontró un resultado, devuelve None para indicar que no se encontró el usuario
+                    return None
+
+            else:
+                print("No se pudo conectar a la base de datos.")
+
+        except mysql.connector.Error as e:
+            print("Error:", e)
+
+        # Si ocurre un error, devuelve None
+        return None
 
 

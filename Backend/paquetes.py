@@ -113,3 +113,41 @@ class Paquetes:
         except mysql.connector.Error as e:
             print("Error:", e)
 
+
+    def verReservas(self, usuario):
+        try:
+            # Conectar a la base de datos
+            conexion = conectar_bd()
+
+            # Verificar la conexión
+            if conexion:
+                cursor = conexion.cursor()
+
+                consulta = """
+                SELECT personas.Nombre, paquetes.* 
+                FROM personas_has_paquetes
+                INNER JOIN personas ON personas_has_paquetes.Personas_idUsuarios = personas.idUsuarios
+                INNER JOIN paquetes ON personas_has_paquetes.Paquetes_idPaquetes = paquetes.idPaquetes
+                WHERE personas_has_paquetes.Personas_idUsuarios = %s
+                """
+                cursor.execute(consulta, (usuario,))
+                resultados = cursor.fetchall()  # Obtener los datos combinados de las tablas
+
+                cursor.close()
+                cerrar_bd(conexion)
+
+                if resultados:
+                    os.system('cls')
+                    print('Usted tiene las siguientes reservas: ')
+                    print('___________________________________')
+                    for i, reserva in enumerate(resultados, start=1):
+                        print(f"{i}. Usuario: {reserva[0]}, Paquete: {reserva[1]}")
+                    print('_____________________________________')
+                    return resultados
+                else:
+                    print("No tiene reservas")
+            else:
+                print("No se pudo conectar a la base de datos.")
+
+        except mysql.connector.Error as e:
+            print("Error:", e)

@@ -2,6 +2,7 @@ import os
 import time
 from destinos import Destinos
 from persona import Persona
+from eliminarReserva import EliminarReserva
 from paquetes import Paquetes
 from administrador import Administrador
 from mysql_conexion import conectar_bd, cerrar_bd  # Importar la función conectar_bd
@@ -28,6 +29,7 @@ def validar_numero():
             print("Por favor, seleccione un número válido.")
 
 def iniciarPrograma():
+    
     while True:
         print('***************************************************')
         print('****Bienvenido al sistema de ventas de ISPC TOUR***')
@@ -43,6 +45,9 @@ def iniciarPrograma():
                     if validar_usuario != False:
                         os.system('cls')
                         print('Bienvenido', validar_usuario, '!')
+                        login = validar_usuario
+                        loginID = Persona.obtener_id_usuario_por_login(login)
+                        
                         break
                     else:
                         os.system('cls')
@@ -67,6 +72,7 @@ def iniciarPrograma():
                 time.sleep(3)
                 os.system('cls')
 
+######################################################################################
         if Administrador.verificarAdministrador(validar_usuario) == 1:
 
             while True:
@@ -105,6 +111,7 @@ def iniciarPrograma():
                 else:
                     print('La opcion seleccionada no es valida')
                     print('********')
+#######################################################################################################
 
         while respuestaUsuario != False:
             print('Por favor seleccione el número de la opción que desee realizar.')
@@ -167,19 +174,22 @@ def iniciarPrograma():
                 print('')
                 print('Usted está por realizar una reserva.')
                 print('Ingrese el CÓDIGO del paquete a reservar: ')
-                
                 codigo = input()
                 
                                          
                 paquetes = Paquetes()
-                usuario = validar_usuario
-                paquetes.realizarReservaPaquete(codigo, usuario)
+                paquetes.realizarReservaPaquete(codigo, loginID)
                                
             
             elif seleccion_menu == '3':
-                verMisReservas()
+                paquetes = Paquetes()
+                os.system('cls')
+                paquetes.verReservas(loginID)
+                print('')
+                time.sleep(1)
 
             elif seleccion_menu == '4':
+                EliminarReserva.eliminar()
                 print('Muestra las reservas y da la opción de eliminarlas')
                 print('********')
 

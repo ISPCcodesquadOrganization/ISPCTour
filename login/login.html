@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar sesión y Registrarse</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div class="wrapper">
+        <form id="login-form">
+            <h1>Iniciar Sesión</h1>
+            <div class="input-box">
+                <input type="email" name="email" placeholder="Correo Electrónico" required>
+                <i class='bx bx-user-circle'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <i class='bx bx-lock-alt'></i>
+            </div>
+
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Recuérdame</label>
+                <a href="#">‎ ¿Olvidaste tu contraseña?</a>
+            </div>
+
+            <button type="button" class="btn" onclick="iniciarSesion()">Iniciar sesión</button>
+
+            <div class="register-link">
+                <p>No tienes una cuenta? <a href="#" onclick="mostrarRegistro()">Regístrate</a></p>
+            </div>
+        </form>
+
+        <form id="registro-form" style="display: none;">
+            <h2>Registrarse</h2>
+            <div class="input-box">
+                <input type="text" name="username" placeholder="Nombre de Usuario" required>
+                <i class="bx bx-user-circle"></i>
+            </div>
+            <div class="input-box">
+                <input type="email" name="reg_email" placeholder="Correo Electrónico" required>
+                <i class='bx bx-envelope'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" name="reg_password" placeholder="Contraseña" required>
+                <i class='bx bx-lock-alt'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" name="repeat_password" placeholder="Repetir Contraseña" required>
+                <i class='bx bx-lock-alt'></i>
+            </div>
+            <button type="button" class="btn" onclick="registrarUsuario()">Registrarse</button>
+            <button type="button" class="btn" onclick="ocultarRegistro()">Cancelar</button>
+        </form>
+    </div>
+
+    <script>
+        function mostrarRegistro() {
+            var loginForm = document.getElementById("login-form");
+            var registroForm = document.getElementById("registro-form");
+            
+            loginForm.style.display = "none";
+            registroForm.style.display = "block";
+        }
+
+        function ocultarRegistro() {
+            var loginForm = document.getElementById("login-form");
+            var registroForm = document.getElementById("registro-form");
+            
+            loginForm.style.display = "block";
+            registroForm.style.display = "none";
+        }
+
+        function iniciarSesion() {
+            var email = document.getElementsByName("email")[0].value;
+            var password = document.getElementsByName("password")[0].value;
+
+            if (email === "iscp@gmail.com" && password === "1234") {
+                window.location.href = "../index.html";
+            } else {
+                alert("Correo o contraseña incorrectos. Por favor, inténtalo de nuevo.");
+            }
+        }
+
+        function registrarUsuario() {
+            var username = document.getElementsByName("username")[0].value;
+            var regEmail = document.getElementsByName("reg_email")[0].value;
+            var regPassword = document.getElementsByName("reg_password")[0].value;
+            var repeatPassword = document.getElementsByName("repeat_password")[0].value;
+
+            if (regPassword !== repeatPassword) {
+                alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
+            } else {
+                var userData = {
+                    username: username,
+                    email: regEmail,
+                    password: regPassword
+                };
+
+                localStorage.setItem("userData", JSON.stringify(userData));
+
+                document.getElementsByName("username")[0].value = "";
+                document.getElementsByName("reg_email")[0].value = "";
+                document.getElementsByName("reg_password")[0].value = "";
+                document.getElementsByName("repeat_password")[0].value = "";
+
+                alert("Registro exitoso. Ahora puedes iniciar sesión.");
+
+
+                ocultarRegistro();
+            }
+        }
+    </script>
+</body>
+</html>
