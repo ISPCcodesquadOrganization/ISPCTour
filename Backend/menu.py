@@ -46,6 +46,7 @@ def iniciarPrograma():
                         os.system('cls')
                         print('Bienvenido', validar_usuario, '!')
                         login = validar_usuario
+                        
                         loginID = Persona.obtener_id_usuario_por_login(login)
                         
                         break
@@ -114,6 +115,7 @@ def iniciarPrograma():
 #######################################################################################################
 
         while respuestaUsuario != False:
+            print("ID del usuario: ", loginID)
             print('Por favor seleccione el número de la opción que desee realizar.')
             print('***************************************************************')
             print('')
@@ -182,13 +184,17 @@ def iniciarPrograma():
                                
             
             elif seleccion_menu == '3':
+                print("ID del usuario: ", loginID)
                 paquetes = Paquetes()
                 os.system('cls')
                 paquetes.verReservas(loginID)
                 print('')
-                time.sleep(1)
+                input("Presiona Enter para continuar...")
+                os.system('cls')
 
             elif seleccion_menu == '4':
+                paquetes = Paquetes()
+                paquetes.verReservas(loginID)
                 EliminarReserva.eliminar()
                 print('Muestra las reservas y da la opción de eliminarlas')
                 print('********')

@@ -11,35 +11,35 @@ class Paquetes:
         self.tipoTransporte = tipoTransporte
         self.cantidadViajantes = cantidadViajantes
 
-    def getFechaInicio(self):
-        return self.fechaInicio
+    # def getFechaInicio(self):
+    #     return self.fechaInicio
 
-    def setFechaInicio(self, fechaInicio):
-        self.fechaInicio = fechaInicio
+    # def setFechaInicio(self, fechaInicio):
+    #     self.fechaInicio = fechaInicio
 
-    def getFechaFin(self):
-        return self.fechaFin
+    # def getFechaFin(self):
+    #     return self.fechaFin
 
-    def setFechaFin(self, fechaFin):
-        self.fechaFin = fechaFin
+    # def setFechaFin(self, fechaFin):
+    #     self.fechaFin = fechaFin
 
-    def getDestino(self):
-        return self.destino
+    # def getDestino(self):
+    #     return self.destino
 
-    def setDestino(self, destino):
-        self.destino = destino
+    # def setDestino(self, destino):
+    #     self.destino = destino
 
-    def getTipoTransporte(self):
-        return self.tipoTransporte
+    # def getTipoTransporte(self):
+    #     return self.tipoTransporte
 
-    def setTipoTransporte(self, tipoTransporte):
-        self.tipoTransporte = tipoTransporte
+    # def setTipoTransporte(self, tipoTransporte):
+    #     self.tipoTransporte = tipoTransporte
 
-    def getCantidadViajantes(self):
-        return self.cantidadViajantes
+    # def getCantidadViajantes(self):
+    #     return self.cantidadViajantes
 
-    def setCantidadViajantes(self, cantidadViajantes):
-        self.cantidadViajantes = cantidadViajantes
+    # def setCantidadViajantes(self, cantidadViajantes):
+    #     self.cantidadViajantes = cantidadViajantes
 
     def mostrarPaquetesDestino(self, idDestino):
         try:
@@ -114,7 +114,7 @@ class Paquetes:
             print("Error:", e)
 
 
-    def verReservas(self, usuario):
+    def verReservas(self, loginID):
         try:
             # Conectar a la base de datos
             conexion = conectar_bd()
@@ -124,13 +124,13 @@ class Paquetes:
                 cursor = conexion.cursor()
 
                 consulta = """
-                SELECT personas.Nombre, paquetes.* 
-                FROM personas_has_paquetes
-                INNER JOIN personas ON personas_has_paquetes.Personas_idUsuarios = personas.idUsuarios
-                INNER JOIN paquetes ON personas_has_paquetes.Paquetes_idPaquetes = paquetes.idPaquetes
-                WHERE personas_has_paquetes.Personas_idUsuarios = %s
+                SELECT php.idCompra AS idCompra, p.Nombre AS Nombre, php.Paquetes_idPaquetes AS idPaquetes
+                FROM personas_has_paquetes AS php
+                INNER JOIN personas AS p ON php.Personas_idUsuarios = p.idUsuarios
+                WHERE php.Personas_idUsuarios = %s
                 """
-                cursor.execute(consulta, (usuario,))
+                
+                cursor.execute(consulta, (loginID,))
                 resultados = cursor.fetchall()  # Obtener los datos combinados de las tablas
 
                 cursor.close()
@@ -141,7 +141,7 @@ class Paquetes:
                     print('Usted tiene las siguientes reservas: ')
                     print('___________________________________')
                     for i, reserva in enumerate(resultados, start=1):
-                        print(f"{i}. Usuario: {reserva[0]}, Paquete: {reserva[1]}")
+                        print(f"{i}. ID de Compra: {reserva[0]}, Usuario: {reserva[1]}, ID de Paquetes: {reserva[2]}")
                     print('_____________________________________')
                     return resultados
                 else:
@@ -151,3 +151,4 @@ class Paquetes:
 
         except mysql.connector.Error as e:
             print("Error:", e)
+
