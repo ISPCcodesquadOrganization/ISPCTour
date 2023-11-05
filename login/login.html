@@ -69,7 +69,6 @@
             var registroForm = document.getElementById("registro-form");
             
             loginForm.style.display = "block";
-
             registroForm.style.display = "none";
         }
 
@@ -90,29 +89,27 @@
             var regPassword = document.getElementsByName("reg_password")[0].value;
             var repeatPassword = document.getElementsByName("repeat_password")[0].value;
 
-
             if (regPassword !== repeatPassword) {
                 alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
-                return;
+            } else {
+                var userData = {
+                    username: username,
+                    email: regEmail,
+                    password: regPassword
+                };
+
+                localStorage.setItem("userData", JSON.stringify(userData));
+
+                document.getElementsByName("username")[0].value = "";
+                document.getElementsByName("reg_email")[0].value = "";
+                document.getElementsByName("reg_password")[0].value = "";
+                document.getElementsByName("repeat_password")[0].value = "";
+
+                alert("Registro exitoso. Ahora puedes iniciar sesión.");
+
+
+                ocultarRegistro();
             }
-
-
-            var userData = {
-                username: username,
-                email: regEmail,
-                password: regPassword
-            };
-
-
-            localStorage.setItem("userData", JSON.stringify(userData));
-
-
-            document.getElementsByName("username")[0].value = "";
-            document.getElementsByName("reg_email")[0].value = "";
-            document.getElementsByName("reg_password")[0].value = "";
-            document.getElementsByName("repeat_password")[0].value = "";
-
-            alert("Registro exitoso. Ahora puedes iniciar sesión.");
         }
     </script>
 </body>

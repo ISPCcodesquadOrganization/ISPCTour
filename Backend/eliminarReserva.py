@@ -14,7 +14,7 @@ def comprobarId(numero):
 
         cursor = conexion.cursor()
 
-        cliente = input("Ingrese su nombre de usuario")
+        cliente = input("Ingrese su nombre de usuario: ")
         consulta = "SELECT idUsuarios FROM personas WHERE nombre = '{}'".format(cliente)
         cursor.execute(consulta)
         resultado = cursor.fetchone()
