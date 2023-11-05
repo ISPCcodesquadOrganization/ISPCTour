@@ -74,44 +74,46 @@ def iniciarPrograma():
                 os.system('cls')
 
 ######################################################################################
-        if Administrador.verificarAdministrador(validar_usuario) == 1:
+        try:
+            if Administrador.verificarAdministrador(validar_usuario) == 1:
 
-            while True:
-                print('******************************')
-                print('Bienvenido al menu de administrador')
-                print('******************************')
-                print('1 - Cambiar rol de usuario')
-                print('2 - Agregar destino')
-                print('3 - Editar destino')
-                print('4 - Salir de menu de administrador y pasar al menu normal')
+                while True:
+                    print('******************************')
+                    print('Bienvenido al menú de administrador')
+                    print('******************************')
+                    print('1 - Cambiar rol de usuario')
+                    print('2 - Agregar destino')
+                    print('3 - Editar destino')
+                    print('4 - Salir del menú de administrador y pasar al menú normal')
 
-                seleccion_administrador = input('Ingrese la opcion seleccionada: ')
+                    seleccion_administrador = input('Ingrese la opción seleccionada: ')
 
-                if seleccion_administrador == '1':
-                    print('Permite seleccionar usuarios para editar')
-                    Administrador.modificar_rol()
-                    print('********')
-            
-                elif seleccion_administrador == '2':
-                    print('Opciones para agregar destinos')
-                    nuevo_destino = Administrar_destinos()
-                    
-                    print('********')
-            
-                elif seleccion_administrador == '3':
-                    print('Muestra destinos y permite seleccionar uno para editar')
-                    Administrar_destinos.editarDestino()
-                    
-                    print('********')
-            
-                elif seleccion_administrador == '4':
-                    print('Usted ha salido de menu administrador')
-                    print('********')
-                    break
+                    if seleccion_administrador == '1':
+                        print('Permite seleccionar usuarios para editar')
+                        Administrador.modificar_rol()
+                        print('********')
 
-                else:
-                    print('La opcion seleccionada no es valida')
-                    print('********')
+                    elif seleccion_administrador == '2':
+                        print('Opciones para agregar destinos')
+                        nuevo_destino = Administrar_destinos()
+                        print('********')
+
+                    elif seleccion_administrador == '3':
+                        print('Muestra destinos y permite seleccionar uno para editar')
+                        Administrar_destinos.editarDestino()
+                        print('********')
+
+                    elif seleccion_administrador == '4':
+                        print('Usted ha salido del menú de administrador')
+                        print('********')
+                        break
+
+                    else:
+                        print('La opción seleccionada no es válida')
+                        print('********')
+
+        except Exception as e:
+            print('Se ha producido un error:', e)
 #######################################################################################################
 
         while respuestaUsuario != False:

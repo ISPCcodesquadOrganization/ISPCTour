@@ -6,7 +6,7 @@ def conectar_bd():
         conexion = mysql.connector.connect(
             host="localhost",
             user="root",
-            password="1234",
+            password="root",
             database="ispc_tour"
         )
         if conexion.is_connected():
